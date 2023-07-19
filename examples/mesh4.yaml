@@ -1,0 +1,40 @@
+# To ensure proper security:
+# Need to create a distinct certificate for each cluster.
+# All cluster certificates issued by the same root certificate authority (CA).
+# Uses step-ca tool (https://github.com/smallstep/cli) to issue a root CA.
+# The process involves creating a Root CA and an Intermediate CA
+# Then issuing a single certificate per Kubernetes cluster, 
+apiVersion: ristioctl.k8smgmt.io/v3
+kind: Certificate
+metadata:
+  name: ristioctl-certs
+spec:
+  #folderPath: certs
+  validityHours: 87600
+  password: false
+  # Subject Alternative Name Suffix
+  sanSuffix: istio.io
+  meshID: usmesh4
+---
+apiVersion: ristioctl.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rakshith-eks1-qc
+spec:
+  kubeconfigFile: "/Users/stephanbenny/Downloads/kubeconfig-rakshith.yaml"
+  context: rakshith-eks1-qc
+  meshID: usmesh4
+  version: "1.18.0"
+  installHelloWorld: true
+---
+apiVersion: ristioctl.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rakshith-eks2-qc
+spec:
+  kubeconfigFile: "/Users/stephanbenny/Downloads/kubeconfig-rakshith.yaml"
+  context: rakshith-eks2-qc
+  meshID: usmesh4
+  version: "1.18.0"
+  installHelloWorld: true
+
