@@ -1,8 +1,6 @@
 package commands
 
 import (
-	"path/filepath"
-
 	"github.com/RafaySystems/rafay-istio-multicluster/pkg/constants"
 	"github.com/RafaySystems/rafay-istio-multicluster/pkg/context"
 	"github.com/RafaySystems/rafay-istio-multicluster/pkg/log"
@@ -87,23 +85,7 @@ func (g *GlobalOptions) Run(cmd *cobra.Command, _ []string) error {
 		isStructuredOutput = false
 	}
 
-	configFile, err := cmd.Flags().GetString(constants.CONFIG_FLAG_NAME)
-	if err != nil {
-		return err
-	}
-
 	cliCtx := context.GetContext()
-	if len(configFile) != 0 {
-		log.GetLogger().Infof("Config options is set up %s \n", configFile)
-
-		dir, file := filepath.Split(configFile)
-		if len(dir) != 0 {
-			cliCtx.ConfigDir = dir
-		}
-		if len(file) != 0 {
-			cliCtx.ConfigFile = file
-		}
-	}
 
 	cliCtx.Verbose = isVerbose
 	cliCtx.Debug = isDebug

@@ -1,6 +1,6 @@
 # rafay-istio-multi-cluster CLI (ristioctl) 
 ## Overview
-The ristioctl CLI is a command line tool that allows you to manage your Rafay Istio Multi-Cluster deployments. The CLI is built using the [cobra]
+The ristioctl CLI is a command line tool that allows you to manage your Istio Multi-Cluster deployments. The CLI is built using the [cobra]
 
 ## Installation
 The CLI can be compiled using the following methods:
