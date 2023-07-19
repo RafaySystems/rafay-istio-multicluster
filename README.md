@@ -7,7 +7,8 @@ The CLI can be compiled using the following methods:
 make build
 
 ## Usage
-./bin/ristioctl_darwin_amd64 -h
+```
+bin/ristioctl_darwin_amd64 -h
 A CLI tool to manage istio mesh across multiple Kubernetes clusters.
 
 Usage:
@@ -28,3 +29,4 @@ Flags:
       --wait      Wait for the operation to complete
 
 Use "ristioctl [command] --help" for more information about a command.
+```
