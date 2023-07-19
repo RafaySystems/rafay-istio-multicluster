@@ -54,7 +54,6 @@ The goal of writing this CLI tool is to automate the setup of a Multi-primary Is
 To address these challenges, adopting infrastructure-as-code (IaC) approaches for configuration management and leveraging automation tools for consistent deployments is recommended. At Rafay, we developed this CLI tool to deploy multi-cluster Istio service mesh in our internal environments. This tool uses the “Multi-Primary on different networks”, topology as described in the [Istio documentation](https://istio.io/latest/docs/setup/install/multicluster/multi-primary_multi-network/).
 
 
-
 The CLI consumes a simple configuration as shown below to set up a multi-cluster service mesh.
 ```
 >> cat examples/mesh.yaml
@@ -102,3 +101,5 @@ spec:
 - Expose services in the clusters
 - Enable cross-cluster service discovery using Rafay ZTKA-based secure channel.
 
+## Topology
+![](/ristioctl.png)
