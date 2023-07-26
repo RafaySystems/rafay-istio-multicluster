@@ -65,17 +65,17 @@ To address these challenges, adopting infrastructure-as-code (IaC) approaches fo
 The CLI consumes a simple configuration to set up the multi-cluster service mesh.
 ```
 >> cat examples/mesh.yaml
-apiVersion: istiomc.k8smgmt.io/v3
+apiVersion: ristioctl.k8smgmt.io/v3
 kind: Certificate
 metadata:
-  name: istiomc-certs
+  name: ristioctl-certs
 spec:
   validityHours: 2190
   password: false
   sanSuffix: istio.io # Subject Alternative Name Suffix
   meshID: uswestmesh
 ---
-apiVersion: istiomc.k8smgmt.io/v3
+apiVersion: ristioctl.k8smgmt.io/v3
 kind: Cluster
 metadata:
   name: cluster1
@@ -86,7 +86,7 @@ spec:
   version: "1.18.0"
   installHelloWorld: true #deploy sample HelloWorld application
 ---
-apiVersion: istiomc.k8smgmt.io/v3
+apiVersion: ristioctl.k8smgmt.io/v3
 kind: Cluster
 metadata:
   name: cluster2
