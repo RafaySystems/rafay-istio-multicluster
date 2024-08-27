@@ -34,7 +34,7 @@ Use "ristioctl [command] --help" for more information about a command.
 
 ## Apply
 ```
->> bin/ristioctl_darwin_amd64 apply -f example/mesh1.yaml
+>> bin/ristioctl_darwin_amd64 apply -f examples/mesh1.yaml
 ```
 Each run creates an audit folder in the user's home directory
 ```/home/.ristioctl/istio/audit-xxx```
@@ -42,13 +42,13 @@ This folder contains all the configurations generated.
 
 ```--dry-run``` 
 ```
->> bin/ristioctl_darwin_amd64 apply -f example/mesh1.yaml --dry-run
+>> bin/ristioctl_darwin_amd64 apply -f examples/mesh1.yaml --dry-run
 ```
 The tool generates the configuration files but does not deploy them to clusters.
 
 ## Delete
 ```
->> bin/ristioctl_darwin_amd64 delete -f example/mesh1.yaml
+>> bin/ristioctl_darwin_amd64 delete -f examples/mesh1.yaml
 ```
 
 ## Goal
